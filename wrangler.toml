@@ -1,0 +1,10 @@
+# Cloudflare Pages project for the platform admin.
+# Build env vars (Pages → Settings → Environment variables) must include:
+#   VITE_BASE_PATH=/
+#   VITE_API_BASE_URL=https://<api-host>
+#
+#   npm run deploy
+
+name = "kapadkart-admin"
+compatibility_date = "2026-11-08"
+pages_build_output_dir = "./dist"
