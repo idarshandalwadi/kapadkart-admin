@@ -42,17 +42,10 @@ The dev server uses port 5174 and will not fall back to another port (`strictPor
 
 ## Production build
 
-Copy `.env.example` to `.env`:
-
-```env
-VITE_BASE_PATH=/
-VITE_API_BASE_URL=https://www.api.kapadkart.mohammadaman.in
-VITE_BACKEND_URL=http://localhost:4000
-```
+`.env.production` leaves `VITE_API_BASE_URL` empty. The published site is HTTPS, and the API is HTTP, so the browser cannot call `http://13.234.170.148` directly. `functions/` proxies `/api`, `/uploads`, and `/images` to `http://13.234.170.148/kapadkart` and inserts `/api/v1`.
 
 ```bash
-npm run build
-npm run preview
+npm run deploy
 ```
 
 `VITE_*` values are public in the built JavaScript. Do not put secrets here.
